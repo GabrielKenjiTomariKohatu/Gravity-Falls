@@ -87,11 +87,13 @@ header {
     display: flex;
     justify-content: space-around;
 }
-.img {
-    padding: 24px;
+.sobre-o-projeto-container2-main {
+    /* padding: 20vh 15vh; */
+    /* background-color: aquamarine; */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
+
 
 .texto-sobre {
     padding: 5vh;
