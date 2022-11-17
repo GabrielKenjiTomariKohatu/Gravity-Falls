@@ -20,7 +20,7 @@ body {
 
 .container {
     width: 155vh;
-    padding: 4vh;
+    padding: 0vh;
     background-color: rgba(0, 0, 0, 0);
     display: flex;
     justify-content: center;
@@ -43,6 +43,7 @@ body {
 
 .rota p {
     color:white;
+    font-size: 20px;
 }
 
 /* main */
@@ -75,6 +76,43 @@ body {
 }
 
 .sobre-o-projeto-container1-main {
-    padding: 50vh 55vh;
-    background-color: aquamarine;
+    /* padding: 20vh 15vh; */
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: space-evenly;
+}
+.img {
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.texto-sobre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.titulo-sobre {
+    border-top: 50px;
+    height: 60px;
+    font-size: 35px;
+    color: aliceblue;
+}
+
+.lorem-sobre {
+    font-size: 20px;
+    color: aliceblue;
+}
+
+.vazio {
+    height: 20vh;
+}
+
+.imagem-sobre img{
+    width: 454px;
+    height: 647px;
+
+    border-radius: 20px;
 }
