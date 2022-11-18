@@ -16,7 +16,6 @@ body {
     background-attachment: fixed ;
 }
 .banner-container-header {
-    /* padding: 65vh; */
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -89,13 +88,11 @@ header {
 }
 
 .sobre-o-projeto-container1-main {
-    /* padding: 20vh 15vh; */
     /* background-color: aquamarine; */
     display: flex;
     justify-content: space-around;
 }
 .sobre-o-projeto-container2-main {
-    /* padding: 20vh 15vh; */
     /* background-color: aquamarine; */
     display: flex;
     justify-content: space-around;
