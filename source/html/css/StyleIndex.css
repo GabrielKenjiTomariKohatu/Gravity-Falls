@@ -165,24 +165,36 @@ header {
 
 .valor1 {
     width: 68%;
-    padding: 10vh;
+    padding: 3vh;
     background-color: #FF565A;
     margin-top: 5vh;
     margin-bottom: 10vh;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .valor2 {
     width: 68%;
-    padding: 10vh;
+    padding: 3vh;
     background-color: #004844;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
 }
 
 .valor3 {
     width: 68%;
-    padding: 10vh;
+    padding: 3vh;
     background-color: #484B4B;
     margin-top: 10vh;
     margin-bottom: 5vh;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.texto-valores .imagem  img{
+    width: 140px;
+    height: 140px;
 }
 
 /* footer */
