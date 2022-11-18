@@ -192,6 +192,21 @@ header {
     justify-content: flex-start;
 }
 
+.texto-valor {
+    margin: 20px;
+    color: aliceblue;
+    font-family: 'Poor Story', cursive;
+}
+
+.titulo-valor {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.lorem-valor {
+    font-size: 20px;
+}
+
 .texto-valores .imagem  img{
     width: 140px;
     height: 140px;
