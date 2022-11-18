@@ -1,0 +1,34 @@
+body {
+    background-image: url("../assets/e870dcf286c210c1df4f66bafc07672f.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    background-attachment: fixed ;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.metade1 {
+    padding: 14vh;
+    width: 50%;
+    /* background-color: aliceblue; */
+}
+
+.metade2 {
+    padding: 14vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: brown; */
+}
+
+.box {
+    height: 10vh;
+    padding: 30vh;
+    border-radius: 20px;
+    background-color: #484B4B;
+}

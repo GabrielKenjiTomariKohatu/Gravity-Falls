@@ -9,7 +9,7 @@ font-family: 'Poor Story', cursive; */
     box-sizing: border-box;
 }
 body {
-    background-image: url("./assets/thumb-1920-625703.jpg");
+    background-image: url("../assets/thumb-1920-625703.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-origin: border-box;
@@ -78,7 +78,7 @@ header {
 
 .banner {
     padding: 10vh;
-    background-image: url("/assets/thumb-1920-625703.jpg");
+    background-image: url("../assets/thumb-1920-625703.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
 }
