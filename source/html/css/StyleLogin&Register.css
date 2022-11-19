@@ -1,5 +1,5 @@
 body {
-    background-image: url("../assets/e870dcf286c210c1df4f66bafc07672f.png");
+    background-image: url("../assets/41cbb1600b17c568d7a309e928416d76.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-origin: border-box;
@@ -30,5 +30,5 @@ main {
     height: 10vh;
     padding: 30vh;
     border-radius: 20px;
-    background-color: #484B4B;
+    background: linear-gradient(to top,#3F1E1E,rgb(0, 0, 0));
 }

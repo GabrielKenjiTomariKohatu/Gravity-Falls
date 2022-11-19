@@ -3,11 +3,16 @@
 /* font-family: 'Montserrat', sans-serif;
 font-family: 'Poor Story', cursive; */
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     background-image: url("../assets/thumb-1920-625703.jpg");
     background-size: cover;
@@ -22,10 +27,12 @@ body {
 }
 
 header {
-    background-color: #0000005d;
+    width: 100%;
+    position: fixed;
+    background-color: #00000086;
     border-bottom: 1px solid rgb(255, 255, 255) ;
+    box-shadow: 12px 14px 18px rgba(0,0,0,0.3);
 }
-
 
 .container {
     width: 255vh;
@@ -36,7 +43,7 @@ header {
 }
 
 .conteudo-header {
-    height: 15vh;
+    height: 8vh;
     width: 75%;
     /* background-color: aqua; */
     display: flex;
@@ -45,16 +52,33 @@ header {
 }
 
 .rota {
-    width: 20px;
+    height: 100%;
+    width: 220px;
     display: flex;
     justify-content: center;
+    align-items: center;
     font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
 }
 
-.rota p {
-    color:white;
+.rota ul {
     font-size: 20px;
-    cursor: pointer;
+    list-style: none;
+}
+
+.rota:hover{
+    background-color: rgba(0, 0, 0, 0.52);
+    color: white;
+}
+
+.espaco p {
+    color:white;
+    font-size: 25px;
+}
+
+.rota a{
+  color: white;
+  text-decoration: none;
 }
 
 /* main */
@@ -87,6 +111,11 @@ header {
     background-color: #3F1E1E;
 }
 
+.vazio {
+    width: 100%;
+    padding: 10vh;
+}
+
 .sobre-o-projeto-container1-main {
     /* background-color: aquamarine; */
     display: flex;
@@ -98,8 +127,42 @@ header {
     justify-content: space-around;
 }
 
+.texto-sobre1 {
+    padding: 5vh;
+    width: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+    margin: 40px;
+}
 
-.texto-sobre {
+.botao {
+    border: 40px;
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.botao button {
+    cursor: pointer;
+    border: none;
+    width: 180px;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.botao button:hover {
+    background-color: #484B4B;
+    color: white;
+    background: radial-gradient(107.37% 107.37% at 50% 44.24%, #484B4B 0%, rgba(72, 75, 75, 0) 100%);
+    box-shadow: 12px 14px 18px rgba(0,0,0,0.3);
+}
+
+.texto-sobre2 {
     padding: 5vh;
     width: 95vh;
     display: flex;
@@ -131,7 +194,6 @@ header {
 }
 
 .container2-main {
-    /* padding: 70vh; */
     /* background-color: aquamarine; */
     display: flex;
     flex-direction: column;
@@ -200,8 +262,6 @@ header {
     color: aliceblue;
     font-family: 'Poor Story', cursive;
 }
-
-
 
 .titulo-valor {
     font-size: 25px;

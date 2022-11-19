@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Gravity Fandom</title>
-
+    <script src="./js/rotas.js"></script>
     <link rel="stylesheet" href="./css/StyleIndex.css">
 
 </head>
@@ -18,25 +18,25 @@
             <div class="container">
                 <div class="conteudo-header">
                     <div class="rota">
-                        <p>Home</p>
+                        <ul><a href="#site">Site</a></ul>
+                    </div>
+                    <div class="espaco">
+                        <p>|</p>
                     </div>
                     <div class="rota">
-                        <p>Site</p>
-                    </div>
-                    <div class="rota">
-                        <p>Projeto</p>
+                        <ul><a href="#projeto">Projeto</a></ul>
                     </div>
                     <div class="imagem-logo">
                         <img src="./assets/logo.png" width="60px" height="60px">
                     </div>
                     <div class="rota">
-                        <p>Valores</p>
+                        <ul><a href="#valores">Valores</a></ul>
+                    </div>
+                    <div class="espaco">
+                        <p>|</p>
                     </div>
                     <div class="rota">
-                        <p>Exemplos</p>
-                    </div>
-                    <div class="rota">
-                        <p>Créditos</p>
+                        <ul><a href="#creditos">Créditos</a></ul>
                     </div>
                 </div>
 
@@ -45,13 +45,16 @@
     </header>
     <!-- --------------------- main -------------------- -->
     <main>
+        <!-- ------------------ vazio ------------------- -->
         <div class="gravity-falls">
 
         </div>
-        <div class="container1-main">
+
+        <div class="container1-main" id="site">
             <div class="conteudo-container1-main">
+                <!-- ----------------- Sobre o Site ----------------- -->
                 <div class="sobre-o-projeto-container1-main">
-                    <div class="texto-sobre">
+                    <div class="texto-sobre1">
                         <div class="titulo-sobre">
                             <p>Sobre o Site</p>
                         </div>
@@ -61,19 +64,28 @@
                                 repellat
                                 fugiat. Eius ducimus laboriosam quibusdam earum.</p>
                         </div>
+                        <div class="botao">
+                            <div class="login">
+                                <button onclick="login()">Login</button>
+                            </div>
+                            <div class="registro">
+                                <button onclick="registro()">Registro</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="imagem-sobre">
                         <img src="./assets/a blog a la canaga.jpg">
                     </div>
                 </div>
-                <div class="vazio">
+                <div class="vazio" id="projeto">
 
                 </div>
+                <!-- -------------------- Sobre o Projeto -------------------- -->
                 <div class="sobre-o-projeto-container2-main">
                     <div class="imagem-sobre">
                         <img src="./assets/61QTzqXFOgL._AC_.jpg">
                     </div>
-                    <div class="texto-sobre">
+                    <div class="texto-sobre2">
                         <div class="titulo-sobre">
                             <p>Sobre o Projeto</p>
                         </div>
@@ -86,7 +98,13 @@
                     </div>
                 </div>
             </div>
+            <div class="vazio2" id="valores">
+
+            </div>
         </div>
+
+        <!-- ---------------------- Valores ---------------------- -->
+
         <div class="fundo-container2">
             <div class="container2-main">
                 <div class="titulo-valores">
@@ -100,10 +118,13 @@
                             </div>
                             <div class="texto-valor">
                                 <div class="titulo-valor">
-                                    <p>Força</p>
+                                    <p>Laços</p>
                                 </div>
                                 <div class="lorem-valor">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nulla cupiditate placeat repellendus eos quos harum veniam saepe est a, dolore consectetur perspiciatis eveniet necessitatibus tempora, voluptatem molestias inventore perferendis.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nulla cupiditate
+                                        placeat repellendus eos quos harum veniam saepe est a, dolore consectetur
+                                        perspiciatis eveniet necessitatibus tempora, voluptatem molestias inventore
+                                        perferendis.</p>
                                 </div>
                             </div>
                         </div>
@@ -115,10 +136,13 @@
                             </div>
                             <div class="texto-valor">
                                 <div class="titulo-valor">
-                                    <p>Força</p>
+                                    <p>Desconhecido</p>
                                 </div>
                                 <div class="lorem-valor">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nulla cupiditate placeat repellendus eos quos harum veniam saepe est a, dolore consectetur perspiciatis eveniet necessitatibus tempora, voluptatem molestias inventore perferendis.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nulla cupiditate
+                                        placeat repellendus eos quos harum veniam saepe est a, dolore consectetur
+                                        perspiciatis eveniet necessitatibus tempora, voluptatem molestias inventore
+                                        perferendis.</p>
                                 </div>
                             </div>
                         </div>
@@ -130,10 +154,13 @@
                             </div>
                             <div class="texto-valor">
                                 <div class="titulo-valor">
-                                    <p>Força</p>
+                                    <p>Direção/Aventura</p>
                                 </div>
                                 <div class="lorem-valor">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nulla cupiditate placeat repellendus eos quos harum veniam saepe est a, dolore consectetur perspiciatis eveniet necessitatibus tempora, voluptatem molestias inventore perferendis.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nulla cupiditate
+                                        placeat repellendus eos quos harum veniam saepe est a, dolore consectetur
+                                        perspiciatis eveniet necessitatibus tempora, voluptatem molestias inventore
+                                        perferendis.</p>
                                 </div>
                             </div>
                         </div>
@@ -142,8 +169,9 @@
             </div>
         </div>
     </main>
+    <!-- -------------------- footer ------------------- -->
     <footer>
-        <div class="footer-70">
+        <div class="footer-70" id="creditos">
             <div class="texto-contatos">
                 <div class="image">1</div>
                 <div class="link">2</div>
