@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poor+Story&display=swap');
+
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Poor Story', cursive; */
+
 body {
     background-image: url("../assets/41cbb1600b17c568d7a309e928416d76.png");
     background-size: cover;
@@ -13,12 +18,13 @@ main {
 
 .metade1 {
     padding: 14vh;
+    height: 100%;
     width: 50%;
     /* background-color: aliceblue; */
 }
 
 .metade2 {
-    padding: 14vh;
+    padding: 3vh;
     width: 50%;
     display: flex;
     justify-content: center;
@@ -27,8 +33,22 @@ main {
 }
 
 .box {
-    height: 10vh;
-    padding: 30vh;
+    /* height: 10vh;
+    padding: 30vh; */
     border-radius: 20px;
     background: linear-gradient(to top,#3F1E1E,rgb(0, 0, 0));
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+p {
+    color: white;
+}
+
+.dados input {
+    height: 40px;
+    width: 380px;
 }
