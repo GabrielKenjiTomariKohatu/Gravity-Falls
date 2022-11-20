@@ -1,3 +1,13 @@
+.metadedois {
+    padding: 3vh;
+    height: 88vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: brown; */
+}
+
 .conteudo {
     width: 47vh;
     display: flex;
@@ -23,6 +33,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.dados p{
     font-size: 28px;
     font-family: 'Poor Story', cursive;
 }
@@ -58,7 +71,7 @@ margin-bottom: 15px;
 }
 
 .registro {
-    padding: 2vh;
+    height: 30px;
     width: 100%;
     display: flex;
     justify-content: center;
