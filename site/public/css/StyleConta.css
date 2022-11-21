@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    border: 0;
+}
+
+body {
+    background-image: url("../assets/f1101ceaf017df84281d17eede1c6ae4.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: fixed;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.metade1 {
+    margin: 20px;
+}
+
+.conta {
+    border-radius: 20px;
+    padding: 20vh;
+    height: 56vh;
+    position: absolute;
+    background-color: rgb(51, 51, 51);
+}
