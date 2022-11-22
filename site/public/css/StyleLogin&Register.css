@@ -2,7 +2,11 @@
 
 /* font-family: 'Montserrat', sans-serif;
 font-family: 'Poor Story', cursive; */
-
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
 body {
     background-image: url("../assets/41cbb1600b17c568d7a309e928416d76.png");
     background-size: cover;
@@ -14,6 +18,7 @@ body {
 main {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .metade1 {
@@ -24,7 +29,7 @@ main {
 }
 
 .metade2 {
-    padding: 3vh;
+    padding: 1vh;
     width: 50%;
     display: flex;
     justify-content: center;
@@ -35,8 +40,12 @@ main {
 .box {
     /* height: 10vh;
     padding: 30vh; */
-    border-radius: 20px;
+    height: 98vh;
+    width: 80vh;
+    border-radius: 10px;
     background: linear-gradient(to top,#3F1E1E,rgb(0, 0, 0));
+    display: flex;
+    justify-content: center;
 }
 
 a {

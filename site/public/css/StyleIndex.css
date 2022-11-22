@@ -36,7 +36,7 @@ header {
 
 .container {
     width: 255vh;
-    padding: 0vh;
+    padding: 2vh;
     background-color: rgba(0, 0, 0, 0);
     display: flex;
     justify-content: center;
@@ -140,9 +140,9 @@ header {
 
 .botao {
     border: 40px;
-    width: 60%;
+    width:80%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .botao button {

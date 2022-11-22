@@ -1,6 +1,6 @@
 .metadedois {
-    padding: 3vh;
-    height: 88vh;
+    padding: 5vh;
+    /* height: 88vh; */
     width: 50%;
     display: flex;
     justify-content: center;
@@ -8,8 +8,20 @@
     /* background-color: brown; */
 }
 
+.boxLogin {
+    /* height: 10vh;
+    padding: 30vh; */
+    height: 88vh;
+    width: 80vh;
+    border-radius: 10px;
+    background: linear-gradient(to top,#3F1E1E,rgb(0, 0, 0));
+    display: flex;
+    justify-content: center;
+}
+
+
 .conteudo {
-    width: 47vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -60,7 +72,6 @@ margin-bottom: 15px;
 
 
 .botao {
-    margin: 30px;
     display: flex;
     justify-content: center;
     width: 100%;

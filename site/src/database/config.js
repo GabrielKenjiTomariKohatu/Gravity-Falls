@@ -19,10 +19,10 @@ var sqlServerConfig = {
 
 // CONEXÃO DO MYSQL WORKBENCH (LOCAL)
 var mySqlConfig = {
-    host: "Estudo",
+    host: "127.0.0.1:3306",
     database: "aquatech",
-    user: "root",
-    password: "Gktkss2108",
+    user: "aluno",
+    password: "sptech",
 };
 
 function executar(instrucao) {
