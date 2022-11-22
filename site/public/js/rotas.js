@@ -4,7 +4,7 @@ function login() {
 }
 
 function registrar() {
-    window.location.href = "Registrar.html"
+    window.location.href = "Cadastrp.html"
 }
 // registro
 // login
