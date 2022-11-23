@@ -156,9 +156,9 @@ header {
 }
 
 .botao button:hover {
-    background-color: #484B4B;
+    background-color: #FF565A;
     color: white;
-    background: radial-gradient(107.37% 107.37% at 50% 44.24%, #484B4B 0%, rgba(72, 75, 75, 0) 100%);
+    /* background: radial-gradient(107.37% 107.37% at 50% 44.24%, #484B4B 0%, rgba(72, 75, 75, 0) 100%); */
     box-shadow: 12px 14px 18px rgba(0,0,0,0.3);
 }
 
@@ -236,6 +236,11 @@ header {
     background: radial-gradient(107.91% 107.91% at 37.4% 50%, #FF565A 0%, rgba(255, 86, 90, 0) 100%);
 }
 
+.valor1 .imagem {
+    display: flex;
+    align-items: center;
+}
+
 .valor2 {
     width: 68%;
     padding: 3vh;
@@ -244,6 +249,11 @@ header {
     justify-content: flex-end;
     flex-direction: row-reverse;
     background: radial-gradient(99.28% 99.28% at 57.64% 50%, #004844 0%, rgba(157, 232, 227, 0) 100%);
+}
+
+.valor2 .imagem {
+    display: flex;
+    align-items: center;
 }
 
 .valor3 {
@@ -255,6 +265,11 @@ header {
     display: flex;
     justify-content: flex-start;
     background: radial-gradient(107.37% 107.37% at 50% 44.24%, #484B4B 0%, rgba(72, 75, 75, 0) 100%);
+}
+
+.valor3 .imagem {
+    display: flex;
+    align-items: center;
 }
 
 .texto-valor {

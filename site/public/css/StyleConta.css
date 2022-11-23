@@ -3,20 +3,146 @@
     border: 0;
     box-sizing: border-box;
 }
-.conteudo {
+.imagem-logo {
     display: flex;
     justify-content: center;
 }
 .metade1 {
-background-color: blueviolet;
-padding: 50vh 0vh;
+background-color: rgb(35, 35, 35);
+background: radial-gradient(107.37% 107.37% at 50% 44.24%, #484B4B 0%, rgb(42, 41, 41) 100%);
+padding: 0vh 0vh;
 width: 25%;
-height: 100%;
+display: flex;
+align-items: center;
+height: 100vh;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .metade2 {
     background-color: aquamarine;
-    padding: 50vh 0vh;
+    padding: 0vh 0vh;
     width: 75%;
     height: 100%;
+}
+
+.logo img{
+    width: 120px;
+    height: 120px;
+}
+
+.botao1, .botao2 {
+    width: 100%;
+}
+
+.home {
+    padding: 0;
+    width: 100%;
+}
+
+.conteudo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.home button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1vh;
+    width: 100%;
+    font-size: 25px
+}
+
+.home button:hover {
+color: white;
+background-color: #484B4B;
+}
+
+.home button:active {
+    color: azure;
+    background-color: rgb(48, 48, 48);
+}
+
+.jogo button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1vh;
+    width: 100%;
+    font-size: 25px
+}
+
+.jogo button:hover {
+    color: white;
+    background-color: #484B4B;
+}
+    
+.jogo button:active {
+    color: azure;
+    background-color: rgb(48, 48, 48);
+}
+
+.sorteio button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1vh;
+    width: 100%;
+    font-size: 25px
+}
+
+.sorteio button:hover {
+    color: white;
+    background-color: #484B4B;
+}
+    
+.sorteio button:active {
+    color: azure;
+    background-color: rgb(48, 48, 48);
+}
+
+.configuracoes button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1vh;
+    width: 100%;
+    font-size: 25px
+}
+
+.configuracoes button:hover {
+    color: white;
+    background-color: #484B4B;
+}
+    
+.configuracoes button:active {
+        color: azure;
+        background-color: rgb(48, 48, 48);
+}
+
+.exit button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1vh;
+    width: 100%;
+    font-size: 25px
+}
+
+.exit button:hover {
+    color: white;
+    background-color: #484B4B;
+}
+    
+.exit button:active {
+    color: azure;
+    background-color: rgb(48, 48, 48);
 }

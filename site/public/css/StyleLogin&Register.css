@@ -8,7 +8,7 @@ font-family: 'Poor Story', cursive; */
     box-sizing: border-box;
 }
 body {
-    background-image: url("../assets/41cbb1600b17c568d7a309e928416d76.png");
+    background-image: url("../assets/sb5u3ukyg1b81.gif");
     background-size: cover;
     background-repeat: no-repeat;
     background-origin: border-box;
@@ -46,6 +46,7 @@ main {
     background: linear-gradient(to top,#3F1E1E,rgb(0, 0, 0));
     display: flex;
     justify-content: center;
+    box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 1);
 }
 
 a {
