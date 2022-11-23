@@ -11,7 +11,6 @@ body {
     background-image: url("../assets/sb5u3ukyg1b81.gif");
     background-size: cover;
     background-repeat: no-repeat;
-    background-origin: border-box;
     background-attachment: fixed ;
 }
 
@@ -40,8 +39,8 @@ main {
 .box {
     /* height: 10vh;
     padding: 30vh; */
-    height: 98vh;
-    width: 80vh;
+    height: aUTO;
+    width: auto;
     border-radius: 10px;
     background: linear-gradient(to top,#3F1E1E,rgb(0, 0, 0));
     display: flex;

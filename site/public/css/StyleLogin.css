@@ -1,5 +1,5 @@
 .metadedois {
-    padding: 5vh;
+    padding: 7vh;
     /* height: 88vh; */
     width: 50%;
     display: flex;
@@ -11,8 +11,8 @@
 .boxLogin {
     /* height: 10vh;
     padding: 30vh; */
-    height: 88vh;
-    width: 80vh;
+    height: auto;
+    width: auto;
     border-radius: 10px;
     background: linear-gradient(to top,#3F1E1E,rgb(0, 0, 0));
     display: flex;
@@ -22,6 +22,7 @@
 
 
 .conteudo {
+    margin:35px;
     width: 100%;
     display: flex;
     flex-direction: column;
