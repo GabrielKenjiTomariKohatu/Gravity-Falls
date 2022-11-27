@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravity Fandom | Conta</title>
+
+    <link rel="icon" href="./assets/icom/logo.png">
+    <link rel="stylesheet" href="./css/StyleConta.css">
+    <script src="./js/conta.js"></script>
+
+    <link rel="stylesheet" href="./css/StyleHome.css">
+    <link rel="stylesheet" href="./css/StyleMemoria.css">
+    <link rel="stylesheet" href="./css/StyleEnygma.css">
+    <link rel="stylesheet" href="./css/StylePersonagens.css">
+    <link rel="stylesheet" href="./css/StyleDiarios.css">
+    <link rel="stylesheet" href="./css/StyleSorteio.css">
+    <link rel="stylesheet" href="./css/StyleEstatisticas.css">
+</head>
+
+<body>
+    <main>
+
+        <div class="painel">
+            <div class="box">
+                <div class="imagem-logo">
+                    <div class="logo">
+                        <img src="./assets/icom/logo.png">
+                    </div>
+                </div>
+                <div class="botao1">
+                    <div class="home">
+                        <button onclick="home()">HOME</button>
+                    </div>
+                    <div class="memoria">
+                        <button onclick="memoria()">JOGO DA MEMÓRIA</button>
+                    </div>
+                    <div class="enygma">
+                        <button onclick="enygma()">ENIGMA</button>
+                    </div>
+                    <div class="personagens">
+                        <button onclick="personagens()">PERSONAGENS</button>
+                    </div>
+                    <div class="diarios">
+                        <button onclick="diarios()">DIÁRIOS</button>
+                    </div>
+                    <div class="estatisticas">
+                        <button onclick="estatisticas()">ESTATÍSTICAS</button>
+                    </div>
+                    <div class="exit">
+                        <button onclick="exit()">EXIT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="conteudo" id="section_home">
+            <div class="display">
+                <div class="titulo-display">
+                    <p>Estatisticas</p>
+                </div>
+            </div>
+            <div class="conteudo-home" id="DivContent">
+                <div class="box-estatisticas">
+                    <div class="titulo-jogo1">
+                        <p>Jogo da Memória</p>
+                    </div>
+                    <div class="grafico-jogo1">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                    <div class="dados-jogo1">
+                        <p>Quantidade de vezes Jogadas: <span>0</span></p>
+                        <p> </p>
+                    </div>
+                </div>
+                <div class="box-estatisticas">
+                    <div class="titulo-jogo1">
+                        <p>Enigma</p>
+                    </div>
+                    <div class="grafico-jogo1">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                    <div class="dados-jogo1">
+                        <p>Quantidade de vezes Jogadas: <span>0</span></p>
+                        <p> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
