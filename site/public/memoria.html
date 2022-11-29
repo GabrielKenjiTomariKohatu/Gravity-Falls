@@ -75,36 +75,57 @@
 
 <script>
     function cadastrarNick() {
-var nickVar = nick_input.value;
-var usuarioVar = sessionStorage.ID_USUARIO;
-//Recupere o valor da nova input pelo nome do id
-// Agora vá para o método fetch logo abaixo
+        var nickVar = nick_input.value;
+        var usuarioVar = sessionStorage.ID_USUARIO;
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
 
 
-if (nickVar == "") {
-    mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+        // Enviando o valor da nova input
+        fetch("/jogo/cadastrarNick", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nickServer: nickVar,
+                usuarioServer: usuarioVar
 
-    return false;
-}
-else {
-    setInterval(sumirMensagem, 5000)
-}
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO CadastrarNickj()!")
 
-// Enviando o valor da nova input
-fetch("/jogo/cadastrarNick", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
-        nickServer: nickVar,
-        usuarioServer: usuarioVar
-        
-    })
-})
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.NICK_USUARIO = json.nick;
+                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.ID_JOGO = json.idJogo;
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
     }
+    
 
     const input = document.querySelector('.login__input');
     const button = document.querySelector('.login__button');
@@ -122,7 +143,7 @@ fetch("/jogo/cadastrarNick", {
         event.preventDefault();
 
         localStorage.setItem('nick', input.value);
-    
+
         window.location = 'cardsmemoria.html';
     }
 

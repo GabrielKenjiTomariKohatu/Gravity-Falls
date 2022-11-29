@@ -1,3 +1,6 @@
+var tempo = 0;
+var points = 0;
+
 const pontuacao = document.querySelector('.pontuacao')
 
 const grid = document.querySelector('.grid');
@@ -48,6 +51,7 @@ const checkEndGame = () => {
       clearInterval(this.loop);
       alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi: ${timer.innerHTML}`);
 
+      
         pontotempo();
     }
 }
@@ -152,8 +156,14 @@ const startTimer = () => {
 function pontotempo() {
    var nickVar = sessionStorage.NICK_USUARIO;
     var jogoVar = sessionStorage.ID_JOGO;
-    var pontoVar = document.getElementById('pontuacao');
-    var timerVar = document.getElementById('timer');
+
+    tempo = Number(timer.value);
+    points = Number(pontuacao.value);
+
+    var pontoVar = pontuacao.innerHTML;
+    // document.getElementById('pontuacao').value;
+    var timerVar = timer.innerHTML;
+    // document.getElementById('timer').value;
 
     // Enviando o valor da nova input
     fetch("/pontuacao/pontotempo", {
