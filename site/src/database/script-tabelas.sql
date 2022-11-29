@@ -31,7 +31,7 @@ CREATE TABLE jogo (
 	data DATE,
 	fkUsuario INT,
 	FOREIGN KEY (fkUsuario) REFERENCES usuario(id)
-)
+);
 
 CREATE TABLE pontuacao (
 	idPontuacao INT,
@@ -39,7 +39,7 @@ CREATE TABLE pontuacao (
 	tempo INT,
 	fkJogo INT, FOREIGN KEY (fkjogo) REFERENCES jogo(idJogo),
 	primary key (idPontuacao,fkJogo)
-)
+);
 
 
 

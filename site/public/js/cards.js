@@ -4,62 +4,65 @@ var points = 0;
 const pontuacao = document.querySelector('.pontuacao')
 
 const grid = document.querySelector('.grid');
-const spanPlayer = document.querySelector('.player');
+const spanNick = document.querySelector('.player');
 const timer = document.querySelector('.timer');
 
 const characters = [
-    'BillsCypher',
-    'BlendinBlenjaminBlandin'
+  'BillsCypher',
+  'BlendinBlenjaminBlandin'
 
 ];
-    // 'CandyChiu',
-    // 'DipperPines',
-    // 'Fiddleford Hadron',
-    // 'GideonGleeful',
-    // 'Gnomo',
-    // 'Gompers',
-    // 'Grenda',
-    // 'LazySusan',
-    // 'MabelPines',
-    // 'MonstroDoSummerween',
-    // 'Multi-Urso',
-    // 'OficialDurland',
-    // 'PacificaNorthwest',
-    // 'RobertValentino',
-    // 'SheriffBlubs',
-    // 'Soos',
-    // 'StanfordPines',
-    // 'StanleyPines',
-    // 'TobyDeterminado',
-    // 'Waddles',
-    // 'Wendy',
-    // 'ShandraJimenez',
+// 'CandyChiu',
+// 'DipperPines',
+// 'Fiddleford Hadron',
+// 'GideonGleeful',
+// 'Gnomo',
+// 'Gompers',
+// 'Grenda',
+// 'LazySusan',
+// 'MabelPines',
+// 'MonstroDoSummerween',
+// 'Multi-Urso',
+// 'OficialDurland',
+// 'PacificaNorthwest',
+// 'RobertValentino',
+// 'SheriffBlubs',
+// 'Soos',
+// 'StanfordPines',
+// 'StanleyPines',
+// 'TobyDeterminado',
+// 'Waddles',
+// 'Wendy',
+// 'ShandraJimenez',
 
 const createElement = (tag, className) => {
-    const element = document.createElement(tag);
-    element.className = className;
-    return element;
-  }
-  
-  let firstCard = '';
-  let secondCard = '';
+  const element = document.createElement(tag);
+  element.className = className;
+  return element;
+}
+
+let firstCard = '';
+let secondCard = '';
 
 const checkEndGame = () => {
-    const disabledCards = document.querySelectorAll('.disabled-card');
-  
-    if (disabledCards.length === 4) {
-      clearInterval(this.loop);
-      alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi: ${timer.innerHTML}`);
+  const disabledCards = document.querySelectorAll('.disabled-card');
 
-      
-        pontotempo();
-    }
+  if (disabledCards.length == 4) {
+    clearInterval(this.loop);
+    alert(`Parabéns, ${spanNick.innerHTML}! Seu tempo foi: ${timer.innerHTML}`);
+    pontotempo();
+
+    setInterval(() => {
+      window.location = 'memoria.html';
+    }, 1000);
+
+  }
 }
 
 const checkCards = () => {
-    const firstCharacter = firstCard.getAttribute('data-character');
-    const secondCharacter = secondCard.getAttribute('data-character');
-if (firstCharacter === secondCharacter) {
+  const firstCharacter = firstCard.getAttribute('data-character');
+  const secondCharacter = secondCard.getAttribute('data-character');
+  if (firstCharacter === secondCharacter) {
 
     firstCard.firstChild.classList.add('disabled-card');
     secondCard.firstChild.classList.add('disabled-card');
@@ -67,148 +70,159 @@ if (firstCharacter === secondCharacter) {
     firstCard = '';
     secondCard = '';
 
-        ponto();
-        checkEndGame();
+    ponto();
+    checkEndGame();
 
-    } else {
-      setTimeout(() => {
-  
-        firstCard.classList.remove('reveal-card');
-        secondCard.classList.remove('reveal-card');
-  
-        firstCard = '';
-        secondCard = '';
-  
-      }, 500);
-    }
-  
+  } else {
+    setTimeout(() => {
+
+      firstCard.classList.remove('reveal-card');
+      secondCard.classList.remove('reveal-card');
+
+      firstCard = '';
+      secondCard = '';
+
+    }, 500);
   }
+
+}
 
 const revealCard = ({ target }) => {
 
-    if (target.parentNode.className.includes('reveal-card')) {
-      return;
-    }
-  
-    if (firstCard === '') {
-  
-      target.parentNode.classList.add('reveal-card');
-      firstCard = target.parentNode;
-  
-    } else if (secondCard === '') {
-  
-      target.parentNode.classList.add('reveal-card');
-      secondCard = target.parentNode;
-  
-      checkCards();
-  
-    }  
+  if (target.parentNode.className.includes('reveal-card')) {
+    return;
   }
+
+  if (firstCard === '') {
+
+    target.parentNode.classList.add('reveal-card');
+    firstCard = target.parentNode;
+
+  } else if (secondCard === '') {
+
+    target.parentNode.classList.add('reveal-card');
+    secondCard = target.parentNode;
+
+    checkCards();
+
+  }
+}
 
 const createCard = (character) => {
 
-    const card = createElement('div', 'card');
-    const front = createElement('div', 'face front');
-    const back = createElement('div', 'face back');
+  const card = createElement('div', 'card');
+  const front = createElement('div', 'face front');
+  const back = createElement('div', 'face back');
 
-    front.style.backgroundImage = `url("./assets/icom/${character}.png")`;
+  front.style.backgroundImage = `url("./assets/icom/${character}.png")`;
 
-    card.appendChild(front);
-    card.appendChild(back);
-  
-    card.addEventListener('click', revealCard);
-    card.setAttribute('data-character', character)
-  
-    return card;
-  }
+  card.appendChild(front);
+  card.appendChild(back);
+
+  card.addEventListener('click', revealCard);
+  card.setAttribute('data-character', character)
+
+  return card;
+}
 
 const loadGame = () => {
-    const duplicateCharacters = [ ...characters, ...characters ];
-  
-    const shuffledArray = duplicateCharacters.sort(() => Math.random() - 0.5);
-  
-    shuffledArray.forEach((character) => {
-      const card = createCard(character);
-      grid.appendChild(card);
-    });
-  }
+  const duplicateCharacters = [...characters, ...characters];
+
+  const shuffledArray = duplicateCharacters.sort(() => Math.random() - 0.5);
+
+  shuffledArray.forEach((character) => {
+    const card = createCard(character);
+    grid.appendChild(card);
+  });
+}
 
 const ponto = () => {
-    const p = +pontuacao.innerHTML;
-    pontuacao.innerHTML = p + 1;
+  const p = +pontuacao.innerHTML;
+  pontuacao.innerHTML = p + 1;
 }
 
 const startTimer = () => {
 
-    this.loop = setInterval(() => {
-      const currentTime = +timer.innerHTML;
-      timer.innerHTML = currentTime + 1;
-    }, 1000);
-  
-  }
+  this.loop = setInterval(() => {
+    const currentTime = +timer.innerHTML;
+    timer.innerHTML = currentTime + 1;
+  }, 1000);
 
-  window.onload = () => {
-    spanPlayer.innerHTML = localStorage.getItem('player');
-    startTimer();
-    loadGame();
-  }
+}
+
+window.onload = () => {
+  spanNick.innerHTML = localStorage.getItem('nick');
+  startTimer();
+  loadGame();
+}
 
 function pontotempo() {
-    var jogoVar = sessionStorage.ID_USUARIO;
+  var jogoVar = sessionStorage.ID_USUARIO;
 
-    tempo = Number(timer.value);
-    points = Number(pontuacao.value);
+  tempo = Number(timer.value);
+  points = Number(pontuacao.value);
 
-    var pontoVar = pontuacao.innerHTML;
-    // document.getElementById('pontuacao').value;
-    var timerVar = timer.innerHTML;
-    // document.getElementById('timer').value;
+  var pontoVar = pontuacao.innerHTML;
+  // document.getElementById('pontuacao').value;
+  var timerVar = timer.innerHTML;
+  // document.getElementById('timer').value;
 
-    // Enviando o valor da nova input
-    fetch("/pontuacao/pontotempo", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            // crie um atributo que recebe o valor recuperado aqui
-            // Agora vá para o arquivo routes/usuario.js
-            pontoServer: pontoVar,
-            timerServer: timerVar,
-            jogoServer: jogoVar
+  // Enviando o valor da nova input
+  fetch("/pontuacao/pontotempo", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      // crie um atributo que recebe o valor recuperado aqui
+      // Agora vá para o arquivo routes/usuario.js
+      pontoServer: pontoVar,
+      timerServer: timerVar,
+      jogoServer: jogoVar
 
-        })
-    }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO CadastrarNickj()!")
+    })
+  }).then(function (resposta) {
+    console.log("ESTOU NO THEN DO CadastrarNickj()!")
 
-            if (resposta.ok) {
-                console.log(resposta);
+    if (resposta.ok) {
+      console.log(resposta);
 
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
+      resposta.json().then(json => {
+        console.log(json);
+        console.log(JSON.stringify(json));
 
-                    sessionStorage.NICK_USUARIO = json.nick;
-                    sessionStorage.ID_JOGO = json.idJogo;
+        sessionStorage.NICK_USUARIO = json.nick;
+        sessionStorage.ID_JOGO = json.idJogo;
 
-                });
+      });
 
-            } else {
+    } else {
 
-                console.log("Houve um erro ao tentar realizar o login!");
+      console.log("Houve um erro ao tentar realizar o login!");
 
-                resposta.text().then(texto => {
-                    console.error(texto);
-                });
-            }
+      resposta.text().then(texto => {
+        console.error(texto);
+      });
+    }
 
-        }).catch(function (erro) {
-            console.log(erro);
-        })
+  }).catch(function (erro) {
+    console.log(erro);
+  })
 
-        return false;
+  return false;
+}
+
+function redirecionar() {
+  window.location = 'memoria.html';
 }
 
 
+function sair() {
+  clearInterval(this.loop);
+  pontotempo();
 
+  setTimeout(() => {
+    window.location = 'memoria.html';
+  }, 300);
 
+}
