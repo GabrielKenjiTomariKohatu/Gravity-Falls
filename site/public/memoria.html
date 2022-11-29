@@ -105,8 +105,7 @@
                     console.log(JSON.stringify(json));
 
                     sessionStorage.NICK_USUARIO = json.nick;
-                    sessionStorage.ID_USUARIO = json.id;
-                    sessionStorage.ID_JOGO = json.idJogo;
+                    // sessionStorage.ID_JOGO = json.idJogo;
 
                 });
 
@@ -125,6 +124,115 @@
 
         return false;
     }
+
+    // function entrar() {
+    //     var emailVar = email_input.value;
+    //     var senhaVar = senha_input.value;
+
+    //     if (emailVar == "" || senhaVar == "") {
+    //         // cardErro.style.display = "block"
+    //         mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+    //         return false;
+    //     }
+    //     else {
+    //         setInterval(sumirMensagem, 5000)
+    //     }
+
+    //     console.log("FORM LOGIN: ", emailVar);
+    //     console.log("FORM SENHA: ", senhaVar);
+
+    //     fetch("/pontuacao/autenticar", {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify({
+    //             emailServer: emailVar,
+    //             senhaServer: senhaVar
+    //         })
+    //     }).then(function (resposta) {
+    //         console.log("ESTOU NO THEN DO entrar()!")
+
+    //         if (resposta.ok) {
+    //             console.log(resposta);
+
+    //             resposta.json().then(json => {
+    //                 console.log(json);
+    //                 console.log(JSON.stringify(json));
+
+    //                 sessionStorage.EMAIL_USUARIO = json.email;
+    //                 sessionStorage.NOME_USUARIO = json.nome;
+    //                 sessionStorage.ID_USUARIO = json.id;
+
+    //                 setTimeout(function () {
+    //                     window.location = "./Contas.html";
+    //                 }, 1000); // apenas para exibir o loading
+
+    //             });
+
+    //         } else {
+
+    //             console.log("Houve um erro ao tentar realizar o login!");
+
+    //             resposta.text().then(texto => {
+    //                 console.error(texto);
+    //             });
+    //         }
+
+    //     }).catch(function (erro) {
+    //         console.log(erro);
+    //     })
+
+    //     return false;
+    // }
+
+//     function cadastrar() {
+
+// //Recupere o valor da nova input pelo nome do id
+// // Agora vá para o método fetch logo abaixo
+// var nickVar = nick_input.value;
+// var usuarioVar = sessionStorage.ID_USUARIO;
+
+// if (nickVar == "") {
+//     mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+//     return false;
+// }
+// else {
+//     setInterval(sumirMensagem, 5000)
+// }
+
+// // Enviando o valor da nova input
+// fetch("/jogo/cadastrarNick", {
+//     method: "POST",
+//     headers: {
+//         "Content-Type": "application/json"
+//     },
+//     body: JSON.stringify({
+//         // crie um atributo que recebe o valor recuperado aqui
+//         // Agora vá para o arquivo routes/usuario.js
+//         nickServer: nickVar,
+//         usuarioServer: usuarioVar
+//     })
+// }).then(function (resposta) {
+
+//     console.log("resposta: ", resposta);
+
+//     if (resposta.ok) {
+
+//         mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+//         limparFormulario();
+//     } else {
+//         throw ("Houve um erro ao tentar realizar o cadastro!");
+//     }
+// }).catch(function (resposta) {
+//     console.log(`#ERRO: ${resposta}`);
+// });
+
+// return false;
+// }
+
     
 
     const input = document.querySelector('.login__input');
@@ -149,4 +257,5 @@
 
     input.addEventListener('input', validateInput);
     form.addEventListener('submit', handleSubmit);
+
 </script>

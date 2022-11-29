@@ -154,8 +154,7 @@ const startTimer = () => {
   }
 
 function pontotempo() {
-   var nickVar = sessionStorage.NICK_USUARIO;
-    var jogoVar = sessionStorage.ID_JOGO;
+    var jogoVar = sessionStorage.ID_USUARIO;
 
     tempo = Number(timer.value);
     points = Number(pontuacao.value);
@@ -175,12 +174,39 @@ function pontotempo() {
             // crie um atributo que recebe o valor recuperado aqui
             // Agora vá para o arquivo routes/usuario.js
             pontoServer: pontoVar,
-            nickServer: nickVar,
             timerServer: timerVar,
             jogoServer: jogoVar
 
         })
-    })
+    }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO CadastrarNickj()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.NICK_USUARIO = json.nick;
+                    sessionStorage.ID_JOGO = json.idJogo;
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
 }
 
 

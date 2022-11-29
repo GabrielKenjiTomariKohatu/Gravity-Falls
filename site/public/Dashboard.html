@@ -92,44 +92,73 @@
 
 </html>
 <script>
-  const Memoria = document.getElementById('memoria');
+  // const Memoria = document.getElementById('memoria');
 
-  new Chart(Memoria, {
-    type: 'line',
-    data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-      datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
-  const Enigma = document.getElementById('enigma');
+  // new Chart(Memoria, {
+  //   type: 'line',
+  //   data: {
+  //     labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+  //     datasets: [{
+  //       label: '# of Votes',
+  //       data: [12, 19, 3, 5, 2, 3],
+  //       borderWidth: 1
+  //     }]
+  //   },
+  //   options: {
+  //     scales: {
+  //       y: {
+  //         beginAtZero: true
+  //       }
+  //     }
+  //   }
+  // });
+  // const Enigma = document.getElementById('enigma');
 
-  new Chart(Enigma, {
-    type: 'line',
-    data: {
-      labels: ['Red', 'White', 'Yellow', 'Green', 'Purple', 'Orange'],
-      datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
+  // new Chart(Enigma, {
+  //   type: 'line',
+  //   data: {
+  //     labels: ['Red', 'White', 'Yellow', 'Green', 'Purple', 'Orange'],
+  //     datasets: [{
+  //       label: '# of Votes',
+  //       data: [12, 19, 3, 5, 2, 3],
+  //       borderWidth: 1
+  //     }]
+  //   },
+  //   options: {
+  //     scales: {
+  //       y: {
+  //         beginAtZero: true
+  //       }
+  //     }
+  //   }
+  // });
+  function exibirAquario(idAquario) {
+        let todosOsGraficos = document.getElementById("graficos")
+
+        for (i = 1; i <= todosOsGraficos.childElementCount; i++) {
+            // exibindo - ou não - o gráfico
+            let elementoAtual = document.getElementById(`grafico${i}`)
+            if (elementoAtual.classList.contains("display-block")) {
+                elementoAtual.classList.remove("display-block")
+            }
+            elementoAtual.classList.add("display-none")
+            
+            // alterando estilo do botão
+            let btnAtual = document.getElementById(`btnAquario${i}`)
+            if (btnAtual.classList.contains("btn-pink")) {
+                btnAtual.classList.remove("btn-pink")
+            }
+            btnAtual.classList.add("btn-white")
         }
-      }
+        
+        // exibindo - ou não - o gráfico
+        let graficoExibir = document.getElementById(`grafico${idAquario}`)
+        graficoExibir.classList.remove("display-none")
+        graficoExibir.classList.add("display-block")
+        
+        // alterando estilo do botão
+        let btnExibir = document.getElementById(`btnAquario${idAquario}`)
+        btnExibir.classList.remove("btn-white")
+        btnExibir.classList.add("btn-pink")
     }
-  });
 </script>

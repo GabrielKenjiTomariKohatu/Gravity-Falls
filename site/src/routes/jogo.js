@@ -11,4 +11,8 @@ router.get("/listar", function (req, res) {
     jogoController.listar(req, res);
 });
 
+router.post("/autenticar", function (req, res) {
+    jogoController.entrar(req, res);
+});
+
 module.exports = router;

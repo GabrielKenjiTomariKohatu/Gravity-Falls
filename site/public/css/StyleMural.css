@@ -27,15 +27,14 @@ font-family: 'Poor Story', cursive; */
     align-items: center;
   }
   
-  .dash-right .avisos .container .div-form {
+.avisos .container .div-form {
     width: 100%;
   }
   
-  .dash-right .avisos .container .div-form #form_postagem {
+ .avisos .container .div-form #form_postagem {
     width: 100%;
   }
-  
-  .dash-right .avisos .div-form label {
+.avisos .div-form label {
     width: 100%;
   }
   

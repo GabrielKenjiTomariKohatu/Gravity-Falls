@@ -1,7 +1,7 @@
 var jogoModel = require("../models/jogoModel");
 
 function listar(req, res) {
-    usuarioModel.listar()
+    jogoModel.listar()
         .then(function (resultado) {
             if (resultado.length > 0) {
                 res.status(200).json(resultado);
@@ -19,7 +19,7 @@ function listar(req, res) {
 
 function cadastrarNick(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var nick = req.body.nickServer;
+    // var nick = req.body.nickServer;
     var usuario = req.body.usuarioServer;
 
     // Faça as validações dos valores
@@ -27,7 +27,7 @@ function cadastrarNick(req, res) {
         res.status(400).send("Seu nome está undefined!");
     } else {
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        jogoModel.cadastrarNick(nick,usuario)
+        jogoModel.cadastrarNick(usuario)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -45,7 +45,10 @@ function cadastrarNick(req, res) {
     }
 }
 
+
+
 module.exports = {
     cadastrarNick,
-    listar
+    listar,
+
 }
