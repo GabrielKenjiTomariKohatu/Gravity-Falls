@@ -15,7 +15,7 @@ font-family: 'Poor Story', cursive; */
 
 .personagem {
     /* padding: 10vh; */
-    height: 29vh;
+    height: 100%;
     background-color: rgb(143, 143, 143);
     display: flex;
     flex-direction: column;

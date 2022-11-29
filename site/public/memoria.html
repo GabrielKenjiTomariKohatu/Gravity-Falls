@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravity Fandom | Jogo da Memória</title>
+
+    <link rel="icon" href="./assets/icom/logo.png">
+    <link rel="stylesheet" href="./css/StyleConta.css">
+    <link rel="stylesheet" href="./css/StyleMemoria.css">
+    <script src="./js/conta.js"></script>
+    <script src="./js/memoria.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="painel">
+            <div class="box">
+                <div class="imagem-logo">
+                    <div class="logo">
+                        <img src="./assets/icom/logo.png">
+                    </div>
+                </div>
+                <div class="botao1">
+                    <div class="home">
+                        <button onclick="home()">HOME</button>
+                    </div>
+                    <div class="memoria">
+                        <button onclick="memoria()">JOGO DA MEMÓRIA</button>
+                    </div>
+                    <div class="enygma">
+                        <button onclick="enygma()">ENIGMA</button>
+                    </div>
+                    <div class="personagens">
+                        <button onclick="personagens()">PERSONAGENS</button>
+                    </div>
+                    <div class="mural">
+                        <button onclick="mural()">Avisos</button>
+                    </div>
+                    <div class="estatisticas">
+                        <button onclick="estatisticas()">ESTATÍSTICAS</button>
+                    </div>
+                    <div class="exit">
+                        <button onclick="logout()">EXIT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="conteudo" id="section_home">
+            <div class="display">
+                <div class="titulo-display">
+                    <p>Jogo da MEMÓRIA</p>
+                </div>
+            </div>
+            <div class="conteudo-home" id="DivContent">
+                <div class="box-home">
+                    <form class="login-form">
+                        <div class="login__header">
+                            <img src="./assets/brain.png" alt="brain icon">
+                            <h1>Memory Game</h1>
+                        </div>
+
+                        <input type="text" placeholder="Name" class="login__input" id="nick_input">
+                        <button onclick="cadastrarNick()" type="submit" class="login__button" disabled>Play</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
+
+<script>
+    function cadastrarNick() {
+var nickVar = nick_input.value;
+var usuarioVar = sessionStorage.ID_USUARIO;
+//Recupere o valor da nova input pelo nome do id
+// Agora vá para o método fetch logo abaixo
+
+
+if (nickVar == "") {
+    mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+    return false;
+}
+else {
+    setInterval(sumirMensagem, 5000)
+}
+
+// Enviando o valor da nova input
+fetch("/jogo/cadastrarNick", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nickServer: nickVar,
+        usuarioServer: usuarioVar
+        
+    })
+})
+    }
+
+    const input = document.querySelector('.login__input');
+    const button = document.querySelector('.login__button');
+    const form = document.querySelector('.login-form');
+
+    const validateInput = ({ target }) => {
+        if (target.value.length > 2) {
+            button.removeAttribute('disabled');
+            return;
+        }
+        button.setAttribute('disabled', '');
+    }
+    // Aqui fica onde o nick vai ser inserido
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        localStorage.setItem('nick', input.value);
+    
+        window.location = 'cardsmemoria.html';
+    }
+
+    input.addEventListener('input', validateInput);
+    form.addEventListener('submit', handleSubmit);
+</script>

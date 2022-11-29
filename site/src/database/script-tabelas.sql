@@ -25,32 +25,24 @@ CREATE TABLE aviso (
 	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
 );
 
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	descricao VARCHAR(300)
-);
+CREATE TABLE jogo (
+	idJogo INT PRIMARY KEY AUTO_INCREMENT,
+	nick VARCHAR(45),
+	data DATE,
+	fkUsuario INT,
+	FOREIGN KEY (fkUsuario) REFERENCES usuario(id)
+)
 
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
-
-create table medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT,
-	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
-);
+CREATE TABLE pontuacao (
+	idPontuacao INT,
+	ponto INT,
+	tempo INT,
+	fkJogo INT, FOREIGN KEY (fkjogo) REFERENCES jogo(idJogo),
+	primary key (idPontuacao,fkJogo)
+)
 
 
 
-/*
-comandos para criar usuário em banco de dados azure, sqlserver,
-com permissão de insert + update + delete + select
-*/
 
 CREATE USER [usuarioParaAPIWebDataViz_datawriter_datareader]
 WITH PASSWORD = '#Gf_senhaParaAPIWebDataViz',

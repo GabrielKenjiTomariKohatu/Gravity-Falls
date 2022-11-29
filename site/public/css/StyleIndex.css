@@ -183,7 +183,14 @@ header {
     font-family: 'Poor Story', cursive;
 }
 
-.lorem-sobre {
+.lorem-sobre1 {
+    font-size: 20px;
+    color: aliceblue;
+    font-family: 'Poor Story', cursive;
+}
+
+.lorem-sobre2 {
+    text-align: justify;
     font-size: 20px;
     color: aliceblue;
     font-family: 'Poor Story', cursive;

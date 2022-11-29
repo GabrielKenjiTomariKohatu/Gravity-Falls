@@ -6,5 +6,6 @@ function login() {
 function registro() {
     window.location.href = "Register.html"
 }
+
 // registro
 // login

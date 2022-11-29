@@ -222,7 +222,7 @@ main {
     background-color: rgb(48, 48, 48);
 }
 
-.livros button {
+.mural button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -232,47 +232,43 @@ main {
     cursor: pointer;
 }
 
-.livros button:hover {
+.mural button:hover {
     color: white;
     background-color: #484B4B;
 }
 
-.livros button:active {
+.mural button:active {
     color: azure;
     background-color: rgb(48, 48, 48);
 }
 
- .conteudo {
+.conteudo {
     /* background-color: #1a1a1a; */
     /* padding: 0vh; */
     margin-left: 30vh;
     width: 100vh;
     display: flex;
     flex-direction: column;
-} 
-
-#DivContent {
-    overflow: auto;
 }
 
 ::-webkit-scrollbar {
     width: 5px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #000000a0; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: rgb(129, 129, 129); 
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgb(85, 85, 85); 
-  }
+}
+
+
+::-webkit-scrollbar-track {
+    background: #000000a0;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: rgb(129, 129, 129);
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(85, 85, 85);
+}
 
 .display {
     background-color: black;
@@ -282,8 +278,7 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    overflow: auto;
-} 
+}
 
 .titulo-display {
     padding: 12px;
@@ -292,6 +287,7 @@ main {
     border: 2px solid rgb(243, 243, 243);
     background-image: url("../assets/5100741.jpg-r_1280_720-f_jpg-q_x-xxyxx.jpg");
 }
+
 .titulo-display p {
     font-size: 45px;
     color: rgb(255, 255, 255);
@@ -299,7 +295,7 @@ main {
     box-shadow: black 5px 5px 5px;
 }
 
- .conteudo-home {
+.conteudo-home {
     width: 100%;
     height: 90vh;
     overflow: auto;
@@ -308,5 +304,4 @@ main {
     display: flex;
     align-items: center;
     flex-direction: column;
-} 
-
+}
