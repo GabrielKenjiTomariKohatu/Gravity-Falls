@@ -10,8 +10,8 @@ function listar() {
     return database.executar(instrucao);
 }
 
-function pontotempo(ponto,timer,jogo) {
-    console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function pontos()",ponto, timer, jogo);
+function pontotempo(ponto, timer, jogo) {
+    console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function pontos()", ponto, timer, jogo);
     var instrucao = `
        insert into pontuacao(ponto,tempo,fkJogo) value (${ponto},${timer},${jogo})
     `;
@@ -37,9 +37,79 @@ function tempo() {
     return database.executar(instrucao);
 }
 
+function buscarUltimasMedidas(idAquario, limite_linhas) {
+
+    instrucaoSql = ''
+
+    if (process.env.AMBIENTE_PROCESSO == "producao") {
+        instrucaoSql = `select top ${limite_linhas}
+       count(jogo.id) as quantidade,
+       tempo as tempo,
+       ponto as ponto,
+       horario, FORMAT(horario, 'HH:mm:ss') as momento_grafico
+                    from jogo as jogo join pontuacao on
+                    pontuacao.fkJogo = jogo.fkJogo
+                    where fkJogo = ${idAquario}
+                    order by id desc`;
+    } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
+        instrucaoSql = `select 
+        count(jogo.id) as quantidade,
+        tempo as tempo,
+        ponto as ponto,
+        horario,DATE_FORMAT(horario,'%H:%i:%s') as momento_grafico
+        from jogo as jogo join pontuacao on
+        pontuacao.fkJogo = jogo.fkJogo
+                    where fkJogo = ${idAquario}
+                    order by id desc limit ${limite_linhas}`;
+    } else {
+        console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
+        return
+    }
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function buscarMedidasEmTempoReal(idAquario) {
+
+    instrucaoSql = ''
+
+    if (process.env.AMBIENTE_PROCESSO == "producao") {
+        instrucaoSql = `select top 1
+        count(jogo.id) as jogos,
+       tempo as tempo,
+       ponto as ponto,
+       CONVERT(varchar, horario, 108) as momento_grafico,
+       fkJogo
+                        from jogo as jogo join pontuacao on
+                        pontuacao.fkJogo = jogo.fkJogo where fkJogo = ${idAquario} 
+                    order by id desc`;
+
+    } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
+        instrucaoSql = `select 
+        count(jogo.id) as jogos,
+       tempo as tempo,
+       ponto as ponto,
+       DATE_FORMAT(horario,'%H:%i:%s') as momento_grafico,
+       fkJogo
+       from jogo as jogo join pontuacao on
+       pontuacao.fkJogo = jogo.fkJogo
+        where fkJogo = ${idAquario} 
+                    order by id desc limit 1`;
+    } else {
+        console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
+        return
+    }
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     listar,
     pontotempo,
     ponto,
     tempo,
+    buscarUltimasMedidas,
+    buscarMedidasEmTempoReal,
 }

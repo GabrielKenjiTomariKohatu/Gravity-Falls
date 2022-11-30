@@ -6,18 +6,18 @@
 comandos para mysql - banco local - ambiente de desenvolvimento
 */
 
-CREATE DATABASE GravityFandom;
+create DATABASE if not exists GravityFandom;
 
 USE GravityFandom;
 
-CREATE TABLE usuario (
+CREATE TABLE if not exists usuario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(50),
 	email VARCHAR(50),
 	senha VARCHAR(50)
 );
 
-CREATE TABLE aviso (
+CREATE TABLE if not exists aviso (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	titulo VARCHAR(100),
 	descricao VARCHAR(150),
@@ -25,21 +25,22 @@ CREATE TABLE aviso (
 	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
 );
 
-CREATE TABLE jogo (
-	idJogo INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE if not exists jogo (
+	id INT PRIMARY KEY AUTO_INCREMENT,
 	nick VARCHAR(45),
-	data DATE,
+    horario datetime DEFAULT current_timestamp(),
 	fkUsuario INT,
 	FOREIGN KEY (fkUsuario) REFERENCES usuario(id)
 );
 
-CREATE TABLE pontuacao (
-	idPontuacao INT,
+CREATE TABLE if not exists pontuacao (
+	id INT,
 	ponto INT,
 	tempo INT,
-	fkJogo INT, FOREIGN KEY (fkjogo) REFERENCES jogo(idJogo),
-	primary key (idPontuacao,fkJogo)
+	fkJogo INT, FOREIGN KEY (fkjogo) REFERENCES jogo(id),
+	primary key (id,fkJogo)
 );
+
 
 
 
