@@ -13,7 +13,7 @@
     <script src="./js/conta.js"></script>
 </head>
 
-<body>
+<body onload="atualizarFeed()">
     <main>
         <div class="painel">
             <div class="box">
@@ -54,7 +54,7 @@
                 </div>
             </div>
             <div class="conteudo-home" id="DivContent">
-                <div class="box-home">
+                
                     <div class="avisos" onload="validar_sessoes">
                         <div class="container">
                             <h1>Publicar um aviso</h1>
@@ -83,7 +83,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                
             </div>
         </div>
     </main>
@@ -135,14 +135,6 @@
 
     }
 
-    function editar(idAviso) {
-        sessionStorage.ID_POSTAGEM_EDITANDO = idAviso;
-        console.log("cliquei em editar - " + idAviso);
-        window.alert("Você será redirecionado à página de edição do aviso de id número: " + idAviso);
-        window.location = "/edicao-aviso.html"
-
-    }
-
     function deletar(idAviso) {
         console.log("Criar função de apagar post escolhido - ID" + idAviso);
         fetch(`/avisos/deletar/${idAviso}`, {
@@ -154,7 +146,7 @@
 
             if (resposta.ok) {
                 window.alert("Post deletado com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
-                window.location = "/mural.html"
+                window.location = "mural.html"
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {
@@ -164,6 +156,7 @@
             console.log(`#ERRO: ${resposta}`);
         });
     }
+
 
     function atualizarFeed() {
         //aguardar();
@@ -224,7 +217,6 @@
                         divPublicacao.appendChild(spanTitulo);
                         divPublicacao.appendChild(divDescricao);
                         divPublicacao.appendChild(divButtons);
-                        divButtons.appendChild(btnEditar);
                         divButtons.appendChild(btnDeletar);
                         feed.appendChild(divPublicacao);
                     }

@@ -6,13 +6,13 @@ font-family: 'Poor Story', cursive; */
 
 
 .box-home {
-    margin-top: 2vh;
+    margin-top: 2%;
     width: 90%;
-    height: 70vh;
-    /* background-color: aliceblue; */
+    height: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    margin-bottom: 3%;
     /* background-color: aliceblue; */
 }
 
@@ -27,7 +27,8 @@ font-family: 'Poor Story', cursive; */
 }
 
 .box-home .imagem img{
-   width: 350px;
+   width: 90%;
+   margin-left: 5%;
 }
 
 .box-home .texto {
@@ -39,23 +40,27 @@ font-family: 'Poor Story', cursive; */
     justify-content: space-around;
 }
 
+.texto {
+    width: 100%;
+}
+
 .texto1 {
     width: 100%;
 }
 
 .box-home .texto p {
     color: white;
-    font-size: 25px;
-    width: 40vh;
+    font-size: 120%;
+    width: 100%;
     text-align: justify;
     font-family: 'Poor Story', cursive;
 }
 
 
 .box-home1 {
-    margin-top: 2vh;
+    margin-top: 2%;
     width: 90%;
-    height: 70vh;
+    height: 100%;
     /* background-color: aliceblue; */
     display: flex;
     flex-direction: column;
@@ -65,9 +70,9 @@ font-family: 'Poor Story', cursive; */
 }
 
 .texto2 {
-    margin-top: 1vh;
+    margin-top: 2%;
     color: white;
-    font-size: 25px;
+    font-size: 120%;
     width: 100%;
     text-align: justify;
     font-family: 'Poor Story', cursive; 
