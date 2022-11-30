@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="./css/StyleConta.css">
   <script src="./js/conta.js"></script>
 
-  <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -61,27 +61,7 @@
             <p>Jogo da Memória</p>
           </div>
           <div class="grafico1">
-            <canvas id="myChart" onload="obterDadosGrafico()" style="width:70vh; height:25vh;">
-            </canvas>
-          </div>
-          <div class="dados-jogo1">
-            <p>Número de partidas: <span>0</span></p>
-            <p>Vezes que Ganhou: <span>0</span></p>
-            <p>Vezes que Perdeu: <span>0</span></p>
-          </div>
-        </div>
-        <div class="box-estatisticas">
-          <div class="titulo-jogo1">
-            <p>Enigma</p>
-          </div>
-          <div class="grafico2">
-            <canvas id="enigma" style="width:70vh; height:25vh;">
-            </canvas>
-          </div>
-          <div class="dados-jogo1">
-            <p>Número de partidas: <span>0</span></p>
-            <p>Vezes que Ganhou: <span>0</span></p>
-            <p>Vezes que Perdeu: <span>0</span></p>
+            <canvas id="myChart"></canvas>
           </div>
         </div>
       </div>
@@ -91,38 +71,36 @@
 
 </html>
 <script>
-//   const labels = Utils.months({count: 7});
-// const data = {
-//   labels: labels,
-//   datasets: [{
-//     label: 'My First Dataset',
-//     data: [65, 59, 80, 81, 56, 55, 40],
-//     fill: false,
-//     borderColor: 'rgb(75, 192, 192)',
-//     tension: 0.1
-//   }]
-// };
+  obterDadosGrafico()
+// const labels = [
+//     'January',
+//     'February',
+//     'March',
+//     'April',
+//     'May',
+//     'June',
+//   ];
 
-// const config = {
-//   type: 'line',
-//   data: data,
-// };
+//   const data = {
+//     labels: labels,
+//     datasets: [{
+//       label: 'My First dataset',
+//       backgroundColor: 'rgb(255, 99, 132)',
+//       borderColor: 'rgb(255, 99, 132)',
+//       data: [0, 10, 5, 2, 20, 30, 45],
+//     }]
+//   };
 
   function obterDadosGrafico() {
 
-// alterarTitulo(idAquario)
 
-if (proximaAtualizacao != undefined) {
-    clearTimeout(proximaAtualizacao);
-}
-
-fetch(`/pontuacao/jogos`, { cache: 'no-store' }).then(function (response) {
+fetch(`/pontuacao/jogo`, { cache: 'no-store' }).then(function (response) {
     if (response.ok) {
         response.json().then(function (resposta) {
             console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
             resposta.reverse();
 
-            plotarGrafico();
+            plotarGrafico(resposta);
         });
     } else {
         console.error('Nenhum dado encontrado ou erro na API');
@@ -133,26 +111,26 @@ fetch(`/pontuacao/jogos`, { cache: 'no-store' }).then(function (response) {
     });
 }
 
-function plotarGrafico() {
+function plotarGrafico(resposta) {
 
 console.log('iniciando plotagem do gráfico...');
 
 // Criando estrutura para plotar gráfico - labels
-let labels = ["Jogos"];
+let labels = [];
 
 // Criando estrutura para plotar gráfico - dados
 let dados = {
     labels: labels,
     datasets: [{
         label: 'points',
-        data: [4],
+        data: [],
         fill: false,
         borderColor: 'rgb(75, 192, 192)',
         tension: 0.1
     },
     {
                 label: 'tempo',
-                data: [8],
+                data: [],
                 fill: false,
                 borderColor: 'rgb(199, 52, 52)',
                 tension: 0.1
@@ -167,9 +145,8 @@ console.log(resposta)
 // Inserindo valores recebidos em estrutura para plotar o gráfico
 for (i = 0; i < resposta.length; i++) {
     var registro = resposta[i];
-    labels.push(registro.momento_grafico);
-    dados.datasets[0].data.push(registro.tempo);
-    dados.datasets[1].data.push(registro.po);
+    labels.push(registro.tempo+'s');
+    dados.datasets[0].data.push(registro.ponto);
 }
 
 console.log('----------------------------------------------')
@@ -188,11 +165,11 @@ const config = {
 
 // Adicionando gráfico criado em div na tela
 let myChart = new Chart(
-    document.getElementById(`myChartCanvas`),
+    document.getElementById(`myChart`),
     config
 );
 
-setTimeout(() => atualizarGrafico( dados, myChart), 2000);
+
 }
 
 

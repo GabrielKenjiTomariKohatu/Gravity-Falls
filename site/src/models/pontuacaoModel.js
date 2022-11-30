@@ -43,21 +43,15 @@ function buscarUltimasMedidas() {
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
         instrucaoSql = `select 
-       count(jogo.id) as quantidade,
-       tempo as tempo,
-       ponto as ponto,
-       horario, FORMAT(horario, 'HH:mm:ss') as momento_grafico
-                    from jogo as jogo join pontuacao on
-                    pontuacao.fkJogo = jogo.fkJogo;
+        tempo as tempo,
+        ponto as ponto
+        from pontuacao ;
                 `;
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         instrucaoSql = `select 
-        count(jogo.id) as quantidade,
-        tempo as tempo,
-        ponto as ponto,
-        horario,DATE_FORMAT(horario,'%H:%i:%s') as momento_grafico
-        from jogo as jogo join pontuacao on
-        pontuacao.fkJogo = jogo.fkJogo;
+        tempo,
+        ponto
+        from pontuacao ;
                   `;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
