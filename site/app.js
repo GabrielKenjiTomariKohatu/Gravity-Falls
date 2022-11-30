@@ -14,7 +14,6 @@ var avisosRouter = require("./src/routes/avisos");
 var jogoRouter = require("./src/routes/jogo");
 var pontuacaoRouter = require("./src/routes/pontuacao");
 
-var medidasRouter = require("./src/routes/medidas");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -28,7 +27,6 @@ app.use("/avisos", avisosRouter);
 app.use("/jogo", jogoRouter);
 app.use("/pontuacao", pontuacaoRouter);
 
-app.use("/medidas", medidasRouter)
 
 app.listen(PORTA, function () {
     console.log(`Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar: http://localhost:${PORTA} \n
