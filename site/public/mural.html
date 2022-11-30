@@ -119,8 +119,8 @@
             if (resposta.ok) {
                 window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
                 window.location = "mural.html";
-                limparFormulario();
-                finalizarAguardar();
+                
+                
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {
@@ -128,7 +128,7 @@
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
+      
         });
 
         return false;
@@ -159,7 +159,7 @@
 
 
     function atualizarFeed() {
-        //aguardar();
+        //
         fetch("/avisos/listar").then(function (resposta) {
             if (resposta.ok) {
                 if (resposta.status == 204) {
@@ -221,20 +221,19 @@
                         divButtons.appendChild(btnDeletar);
                         feed.appendChild(divPublicacao);
                     }
-
-                    finalizarAguardar();
+ 
                 });
             } else {
                 throw ('Houve um erro na API!');
             }
         }).catch(function (resposta) {
             console.error(resposta);
-            finalizarAguardar();
+      
         });
     }
 
     function testar() {
-        aguardar();
+        
 
         var formulario = new URLSearchParams(new FormData(document.getElementById("form_postagem")));
 
@@ -243,7 +242,7 @@
         divResultado.appendChild(document.createTextNode(formulario.get("descricao")));
         divResultado.innerHTML = formulario.get("descricao");
 
-        finalizarAguardar();
+  
 
         return false;
     }

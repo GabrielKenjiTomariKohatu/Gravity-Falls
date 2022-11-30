@@ -37,20 +37,19 @@ function tempo() {
     return database.executar(instrucao);
 }
 
-function buscarUltimasMedidas(idAquario, limite_linhas) {
+function buscarUltimasMedidas() {
 
     instrucaoSql = ''
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
-        instrucaoSql = `select top ${limite_linhas}
+        instrucaoSql = `select 
        count(jogo.id) as quantidade,
        tempo as tempo,
        ponto as ponto,
        horario, FORMAT(horario, 'HH:mm:ss') as momento_grafico
                     from jogo as jogo join pontuacao on
-                    pontuacao.fkJogo = jogo.fkJogo
-                    where fkJogo = ${idAquario}
-                    order by id desc`;
+                    pontuacao.fkJogo = jogo.fkJogo;
+                `;
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         instrucaoSql = `select 
         count(jogo.id) as quantidade,
@@ -58,9 +57,8 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
         ponto as ponto,
         horario,DATE_FORMAT(horario,'%H:%i:%s') as momento_grafico
         from jogo as jogo join pontuacao on
-        pontuacao.fkJogo = jogo.fkJogo
-                    where fkJogo = ${idAquario}
-                    order by id desc limit ${limite_linhas}`;
+        pontuacao.fkJogo = jogo.fkJogo;
+                  `;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
@@ -70,40 +68,6 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
     return database.executar(instrucaoSql);
 }
 
-function buscarMedidasEmTempoReal(idAquario) {
-
-    instrucaoSql = ''
-
-    if (process.env.AMBIENTE_PROCESSO == "producao") {
-        instrucaoSql = `select top 1
-        count(jogo.id) as jogos,
-       tempo as tempo,
-       ponto as ponto,
-       CONVERT(varchar, horario, 108) as momento_grafico,
-       fkJogo
-                        from jogo as jogo join pontuacao on
-                        pontuacao.fkJogo = jogo.fkJogo where fkJogo = ${idAquario} 
-                    order by id desc`;
-
-    } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select 
-        count(jogo.id) as jogos,
-       tempo as tempo,
-       ponto as ponto,
-       DATE_FORMAT(horario,'%H:%i:%s') as momento_grafico,
-       fkJogo
-       from jogo as jogo join pontuacao on
-       pontuacao.fkJogo = jogo.fkJogo
-        where fkJogo = ${idAquario} 
-                    order by id desc limit 1`;
-    } else {
-        console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
-        return
-    }
-
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);
-}
 
 module.exports = {
     listar,
@@ -111,5 +75,5 @@ module.exports = {
     ponto,
     tempo,
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal,
+
 }

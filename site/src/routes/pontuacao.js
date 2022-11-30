@@ -15,13 +15,8 @@ router.get("/tempo", function (req, res) {
     pontuacaoController.tempo(req, res);
 });
 
-router.get("/ultimas/:idAquario", function (req, res) {
+router.get("/jogo", function (req, res) {
     pontuacaoController.buscarUltimasMedidas(req, res);
 });
-
-router.get("/tempo-real/:idAquario", function (req, res) {
-    pontuacaoController.buscarMedidasEmTempoReal(req, res);
-})
-
 
 module.exports = router;

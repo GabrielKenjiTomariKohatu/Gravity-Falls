@@ -28,7 +28,7 @@ function cadastrarNick(req, res) {
         res.status(400).send("Seu nome está undefined!");
     } else {
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        jogoModel.cadastrarNick(usuario,nick)
+        jogoModel.cadastrarNick(nick, usuario)
             .then(
                 function (resultado) {
                     res.json(resultado);
