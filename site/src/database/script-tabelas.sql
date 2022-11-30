@@ -34,7 +34,7 @@ CREATE TABLE if not exists jogo (
 );
 
 CREATE TABLE if not exists pontuacao (
-	id INT,
+	id INT auto_increment,
 	ponto INT,
 	tempo INT,
 	fkJogo INT, FOREIGN KEY (fkjogo) REFERENCES jogo(id),

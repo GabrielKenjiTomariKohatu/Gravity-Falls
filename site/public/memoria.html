@@ -94,29 +94,32 @@
                 usuarioServer: usuarioVar
 
             })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO CadastrarNickj()!")
+        // }).then(function (resposta) {
+        //     console.log("ESTOU NO THEN DO CadastrarNickj()!")
 
-            if (resposta.ok) {
-                console.log(resposta);
+        //     if (resposta.ok) {
+        //         console.log(resposta);
 
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
+        //         resposta.json().then(json => {
+        //             console.log(json);
+        //             console.log(JSON.stringify(json));
 
-                    sessionStorage.NICK_USUARIO = json.nick;
-                    // sessionStorage.ID_JOGO = json.idJogo;
+        //             sessionStorage.NOME_USUARIO = json.nome;
+        //             sessionStorage.ID_USUARIO = json.id;
 
-                });
+        //             // sessionStorage.NICK_USUARIO = json.nick;
+        //             // sessionStorage.ID_JOGO = json.idJogo;
 
-            } else {
+        //         });
 
-                console.log("Houve um erro ao tentar realizar o login!");
+        //     } else {
 
-                resposta.text().then(texto => {
-                    console.error(texto);
-                });
-            }
+        //         console.log("Houve um erro ao tentar realizar o login!");
+
+        //         resposta.text().then(texto => {
+        //             console.error(texto);
+        //         });
+        //     }
 
         }).catch(function (erro) {
             console.log(erro);
@@ -252,7 +255,7 @@ const handleSubmit = (event) => {
   event.preventDefault();
   
   localStorage.setItem('nick', input.value);
-  window.location = 'cardsmemoria.html';
+//   window.location = 'cardsmemoria.html';
 }
 
 input.addEventListener('input', validateInput);

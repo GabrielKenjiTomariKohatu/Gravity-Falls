@@ -21,13 +21,14 @@ function cadastrarNick(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     // var nick = req.body.nickServer;
     var usuario = req.body.usuarioServer;
+    var nick = req.body.nickServer;
 
     // Faça as validações dos valores
     if (nick == undefined) {
         res.status(400).send("Seu nome está undefined!");
     } else {
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        jogoModel.cadastrarNick(usuario)
+        jogoModel.cadastrarNick(usuario,nick)
             .then(
                 function (resultado) {
                     res.json(resultado);
