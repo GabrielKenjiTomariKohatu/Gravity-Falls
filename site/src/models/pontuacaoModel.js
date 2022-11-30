@@ -42,16 +42,20 @@ function buscarUltimasMedidas() {
     instrucaoSql = ''
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
-        instrucaoSql = `select 
-        tempo as tempo,
-        ponto as ponto
-        from pontuacao ;
+        instrucaoSql = `select
+        p.id as partida, 
+        p.tempo as tempo,
+        p.ponto as ponto
+        from pontuacao as p join jogo as j
+        on fkJogo = j.id ;
                 `;
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         instrucaoSql = `select 
-        tempo,
-        ponto
-        from pontuacao ;
+        p.id as partida,
+        p.tempo as tempo,
+        p.ponto as ponto
+        from pontuacao as p join jogo as j
+        on fkJogo = j.id ;
                   `;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");

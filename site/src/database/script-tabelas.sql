@@ -41,7 +41,46 @@ CREATE TABLE if not exists pontuacao (
 	primary key (id,fkJogo)
 );
 
+-- select tempo as tempo, ponto as ponto from pontuacao join jogo as j on fkJogo = j.id ;
+-- SELECT * FROM usuario WHERE email = '${email}' AND senha = '${senha}'; 
+-- INSERT INTO usuario (nome, email, senha) VALUES ('${nome}', '${email}', '${senha}');
+-- insert into pontuacao(ponto,tempo,fkJogo) value (${ponto},${timer},${jogo});
+-- insert into jogo(nick,fkUsuario) values ('${nick}', '${usuario}');
+-- DELETE FROM aviso WHERE id = ${idAviso};
+-- INSERT INTO aviso (titulo, descricao, fk_usuario) VALUES ('${titulo}', '${descricao}', ${idUsuario});
+-- SELECT  a.id AS idAviso,
+-- 	    a.titulo,
+-- 		a.descricao,
+-- 		a.fk_usuario,
+-- 		u.id AS idUsuario,
+-- 		u.nome,
+-- 		u.email,
+-- 		u.senha 
+-- 		FROM aviso a INNER JOIN usuario u ON a.fk_usuario = u.id WHERE u.id = ${idUsuario};
+-- SELECT  a.id AS idAviso,
+-- 	    a.titulo,
+-- 		a.descricao,
+-- 		a.fk_usuario,
+-- 		u.id AS idUsuario,
+-- 		u.nome,
+-- 		u.email,
+-- 		u.senha
+--         FROM aviso a INNER JOIN usuario u ON a.fk_usuario = u.id
+--         WHERE a.descricao LIKE '${texto}';
+-- SELECT  a.id AS idAviso,
+-- 		a.titulo,
+-- 		a.descricao,
+-- 		a.fk_usuario,
+-- 		u.id AS idUsuario,
+-- 		u.nome,
+-- 		u.email,
+-- 		u.senha
+-- 	    FROM aviso a INNER JOIN usuario u ON a.fk_usuario = u.id;
 
+select * from usuario;
+select * from pontuacao;
+select * from jogo;
+select * from aviso;
 
 
 

@@ -102,26 +102,6 @@ main {
     background-color: rgb(48, 48, 48);
 }
 
-.enygma button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2vh;
-    width: 100%;
-    font-size: 25px;
-    cursor: pointer;
-}
-
-.enygma button:hover {
-    color: white;
-    background-color: #484B4B;
-}
-
-.enygma button:active {
-    color: azure;
-    background-color: rgb(48, 48, 48);
-}
-
 .personagens button {
     display: flex;
     align-items: center;

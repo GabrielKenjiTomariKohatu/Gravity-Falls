@@ -9,31 +9,31 @@ const timer = document.querySelector('.timer');
 
 const characters = [
   'BillsCypher',
-  'BlendinBlenjaminBlandin'
-
+  'BlendinBlenjaminBlandin',
+  'CandyChiu',
+  'DipperPines',
+  'Fiddleford Hadron',
+  'GideonGleeful',
+  'Gnomo',
+  'Gompers',
+  'Grenda',
+  'LazySusan',
+  'MabelPines',
+  'MonstroDoSummerween',
+  'Multi-Urso',
+  'OficialDurland',
+  'PacificaNorthwest',
+  'RobertValentino',
+  'SheriffBlubs',
+  'Soos',
+  'StanfordPines',
+  'StanleyPines',
+  'TobyDeterminado',
+  'Waddles',
+  'Wendy',
+  'ShandraJimenez',
 ];
-// 'CandyChiu',
-// 'DipperPines',
-// 'Fiddleford Hadron',
-// 'GideonGleeful',
-// 'Gnomo',
-// 'Gompers',
-// 'Grenda',
-// 'LazySusan',
-// 'MabelPines',
-// 'MonstroDoSummerween',
-// 'Multi-Urso',
-// 'OficialDurland',
-// 'PacificaNorthwest',
-// 'RobertValentino',
-// 'SheriffBlubs',
-// 'Soos',
-// 'StanfordPines',
-// 'StanleyPines',
-// 'TobyDeterminado',
-// 'Waddles',
-// 'Wendy',
-// 'ShandraJimenez',
+
 
 const createElement = (tag, className) => {
   const element = document.createElement(tag);
@@ -47,7 +47,7 @@ let secondCard = '';
 const checkEndGame = () => {
   const disabledCards = document.querySelectorAll('.disabled-card');
 
-  if (disabledCards.length == 4) {
+  if (disabledCards.length == 48) {
     clearInterval(this.loop);
     alert(`Parabéns, ${spanNick.innerHTML}! Seu tempo foi: ${timer.innerHTML}`);
     pontotempo();
@@ -163,19 +163,14 @@ function pontotempo() {
   points = Number(pontuacao.value);
 
   var pontoVar = pontuacao.innerHTML;
-  // document.getElementById('pontuacao').value;
   var timerVar = timer.innerHTML;
-  // document.getElementById('timer').value;
 
-  // Enviando o valor da nova input
   fetch("/pontuacao/pontotempo", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      // crie um atributo que recebe o valor recuperado aqui
-      // Agora vá para o arquivo routes/usuario.js
       pontoServer: pontoVar,
       timerServer: timerVar,
       jogoServer: jogoVar

@@ -1,6 +1,6 @@
 // sessão
 function validarSessao() {
-    // aguardar();
+
 
     var email = sessionStorage.EMAIL_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
@@ -11,7 +11,6 @@ function validarSessao() {
         // window.alert(`Seja bem-vindo, ${nome}!`);
         b_usuario.innerHTML = nome;
 
-        // finalizarAguardar();
     } else {
         window.location = "../Login.html";
     }
@@ -28,9 +27,9 @@ function finalizarAguardar(texto) {
 }
 
 function limparSessao() {
-    // aguardar();
+
     sessionStorage.clear();
-    // finalizarAguardar();
+
     window.location = "../Login.html";
 }
 
