@@ -5,6 +5,9 @@ font-family: 'Nerko One', cursive;
 font-family: 'Poor Story', cursive;
 font-family: 'Press Start 2P', cursive; */
 
+.memoria button {
+    font-weight: 900;
+}
 
 .conteudo-home {
     display: flex;

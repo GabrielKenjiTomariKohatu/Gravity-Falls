@@ -68,7 +68,7 @@ main {
     justify-content: center;
     padding: 2vh;
     width: 100%;
-    font-size: 25px;
+    font-size: 120%;
     cursor: pointer;
 }
 
@@ -88,7 +88,7 @@ main {
     justify-content: center;
     padding: 2vh;
     width: 100%;
-    font-size: 25px;
+    font-size: 120%;
     cursor: pointer;
 }
 
@@ -108,7 +108,7 @@ main {
     justify-content: center;
     padding: 2vh;
     width: 100%;
-    font-size: 25px;
+    font-size: 120%;
     cursor: pointer;
 }
 
@@ -128,7 +128,7 @@ main {
     justify-content: center;
     padding: 2vh;
     width: 100%;
-    font-size: 25px;
+    font-size: 120%;
     cursor: pointer;
 }
 
@@ -142,33 +142,13 @@ main {
     background-color: rgb(48, 48, 48);
 }
 
-.diarios button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2vh;
-    width: 100%;
-    font-size: 25px;
-    cursor: pointer;
-}
-
-.diarios button:hover {
-    color: white;
-    background-color: #484B4B;
-}
-
-.diarios button:active {
-    color: azure;
-    background-color: rgb(48, 48, 48);
-}
-
 .estatisticas button {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2vh;
     width: 100%;
-    font-size: 25px;
+    font-size: 120%;
     cursor: pointer;
 }
 
@@ -188,7 +168,7 @@ main {
     justify-content: center;
     padding: 2vh;
     width: 100%;
-    font-size: 25px;
+    font-size: 120%;
     cursor: pointer;
 }
 
@@ -208,7 +188,7 @@ main {
     justify-content: center;
     padding: 2vh;
     width: 100%;
-    font-size: 25px;
+    font-size: 120%;
     cursor: pointer;
 }
 

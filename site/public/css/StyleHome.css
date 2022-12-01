@@ -4,6 +4,9 @@
 font-family: 'Nerko One', cursive;
 font-family: 'Poor Story', cursive; */
 
+.home button {
+    font-weight: 900;
+}
 
 .box-home {
     margin-top: 2%;

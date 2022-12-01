@@ -4,6 +4,10 @@
 font-family: 'Nerko One', cursive;
 font-family: 'Poor Story', cursive; */
 
+.estatisticas button {
+    font-weight: 900;
+}
+
 * {
     margin: 0;
     border: 0;
