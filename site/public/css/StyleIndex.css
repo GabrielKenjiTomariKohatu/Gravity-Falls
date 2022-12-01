@@ -213,11 +213,12 @@ header {
 
 .titulo-valores {
     padding: 20px;
-    text-align: center;
     background-color: #3F1E1E;
     color: white;
     font-size: 35px;
     font-family: 'Montserrat', sans-serif;
+    justify-content: center;
+    display: flex;
 }
 
 .fundo-container2 {
@@ -290,12 +291,13 @@ header {
 }
 
 .titulo-valor {
-    font-size: 25px;
+    font-size: 130%;
     margin-bottom: 5px;
 }
 
 .lorem-valor {
-    font-size: 20px;
+    text-align: justify;
+    font-size: 115%;
 }
 
 .texto-valores .imagem img {
